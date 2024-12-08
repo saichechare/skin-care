@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>appointment</title>
+        <style>
+            
+/* Book Appointment Section */
+#appointment {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#appointment h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#appointment p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.appointment-form label {
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+}
+
+.appointment-form input,
+.appointment-form textarea,
+.appointment-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.appointment-form textarea {
+    resize: vertical;
+}
+
+.appointment-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    
+    <!-- Book Appointment Section -->
+<section id="appointment" class="container">
+    <h2>Book an Appointment</h2>
+    <p>Schedule a personalized consultation with our skincare experts.</p>
+    <form class="appointment-form" action='/create' method='POST'>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="name">Gender:</label>
+        <input type="text" id="gender" name="gender" placeholder="Enter your Gender" required>
+
+        <label for="name">Region:</label>
+        <input type="text" id="region" name="region" placeholder="Enter your Region" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="options">Choose a Doctor:</label>
+        <select id="options" name="options" required>
+            <option value="">--Select a Doctor--</option>
+            <option value="Dr Aaditi Survase">Dr Aaditi Survase</option>
+            <option value="Dr Teja Kulkarni">Dr Teja Kulkarni</option>
+            <option value="Dr Shreeya">Dr Shreeya</option>
+            <option value="Dr Snehal Kalantri">Dr Snehal Kalantri</option>
+        </select>
+
+        <label for="problem">Problem:</label>
+        <textarea text="text" id="problem" name="problem" placeholder="Enter any specific problem"></textarea>
+
+        <label for="message">Additional Notes:</label>
+        <textarea text="text" id="message" name="message" placeholder="Enter any specific requirements or concerns"></textarea>
+
+        <button type="submit" class="submit-btn" >Book Appointment</button>
+    </form>
+</section>
+</body>

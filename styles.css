@@ -1,0 +1,485 @@
+/* For the Skincare Doctor heading */
+.skincare-doctor {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem; /* Adjust this size as needed */
+}
+
+
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #efc8b1;
+    color: #0e0e0e;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: #0e0e0e;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar nav ul li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    padding: 10px;
+    width: 400px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.microphone-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.microphone-btn i {
+    color: #4caf50;
+    font-size: 18px;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev-btn, .next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/*face scan*/
+.container {
+    text-align: center;
+    border: 2px solid #c9c1c1;
+    padding: 20px;
+    background-color: white;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.scan-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    background-color: #4caf50;
+    color: #fff;
+}
+.scan-btn:hover {
+    background-color: #388e3c;
+}
+
+#webcam {
+    border: 2px solid #ccc;
+    display: none;
+    margin: 0 auto;
+}
+
+#canvas {
+    display: none;
+}
+
+#output {
+    margin-top: 20px;
+}
+
+
+
+/* Info Cards Section Styles */
+.info-cards {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.info-cards h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Card Styles */
+.info-card {
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Aligns the children in a vertical column */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Ensures text is centered within the card */
+    position: relative;
+    overflow: hidden; /* Ensures the image does not overflow the card */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the space without distorting */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Button Style */
+.details-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.details-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Hidden Details Section */
+.card-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Show details on button click */
+.card-details.active {
+    display: block;
+}
+
+
+
+/* Products rec Section */
+.recommended-products {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.recommended-products h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.recommended-product-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.recommended-product-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.recommended-product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.recommended-product-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.recommended-product-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.recommended-product-card .full-description {
+    display: none;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.recommended-product-card button,
+.recommended-product-card .view-more-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recommended-product-card button:hover,
+.recommended-product-card .view-more-btn:hover {
+    background-color: #555;
+}
+
+.recommended-product-card .view-more-btn {
+    background-color:#4caf50;
+    margin-top: 10px;
+}
+
+.recommended-product-card .view-more-btn:hover {
+    background-color: #388e3c;
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Contact Details */
+.contact-details {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.contact-details i {
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #388e3c;
+}
+
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background-color: #efc8b1;
+    color:#0e0e0e;
+    text-align: center;
+}
+
+
+
+/* About Section Style */
+#about {
+    background: #eaeaea;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#about h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Our Team Section */
+#team {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+#team h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #555;
+}
+

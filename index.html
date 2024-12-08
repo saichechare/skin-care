@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skincare Landing Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <h1 class="skincare-doctor">Skincare Doctor</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/appointment">Appointment</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search Products...">
+            <button class="microphone-btn">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+    </header>
+    
+
+   <!-- Slider Section -->
+<section class="slider">
+    <div class="slider-container">
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin.jpg') }}" alt="Skincare Image 1">
+            <div class="slide-content">
+                <h1>Discover the Best Skincare Products</h1>
+                <p>Achieve glowing skin with our top-rated skincare essentials.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin2.jpg') }}" alt="Skincare Image 2">
+            <div class="slide-content">
+                <h1>Feel Fresh Every Day</h1>
+                <p>Refresh your skin with our daily care products.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin3.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+            
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin4.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin5.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin6.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+            
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin7.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+            
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin8.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+            
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/skin8.jpg') }}" alt="Skincare Image 3">
+            <div class="slide-content">
+                <h1>Skincare Solutions for Every Skin Type</h1>
+                <p>Find the perfect match for your skincare routine.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="slider-controls">
+        <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+
+    <div class="container">
+        <h1>Face Scanning Feature</h1>
+        <button id="scanFaceBtn" class="scan-btn">Scan Your Face</button>
+        <video id="webcam" width="640" height="480" autoplay></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <div id="output"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+
+    <!-- Information Cards Section -->
+    <section class="info-cards">
+        <h2>Skincare Tips</h2>
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/pimples.jpg') }}" alt="Mission" class="card-image">
+                <h3>Pimples</h3>
+                <p>Pimples are a common skin condition caused by clogged or inflamed oil glands or an increased presence of pimple-causing bacteria on your skin.</p>
+                <button class="details-btn" onclick="toggleDetails('missionDetails', this)">View More</button>
+                <div class="card-details" id="missionDetails">
+                    <p>They’re a symptom of acne, and there are many different types, including blackheads, whiteheads, cysts and others. Treatments include home remedies and over-the-counter and prescription pills and gels.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/Tanning.jpg') }}" alt="Our Team" class="card-image">
+                <h3>Tanning</h3>
+                <p>You get tan when your skin comes into contact with ultraviolet rays of light (UV rays). The two types of UV rays are UVA and UVB.</p>
+                <button class="details-btn" onclick="toggleDetails('teamDetails', this)">View More</button>
+                <div class="card-details" id="teamDetails">
+                    <p>Your skin has three major layers: Epidermis (the top layer), Dermis (the second layer), and Subcutaneous tissue (the third layer).</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/Rashes.jpg') }}" alt="Products" class="card-image">
+                <h3>Rashes</h3>
+                <p>A simple rash is called dermatitis, meaning inflammation of the skin.</p>
+                <button class="details-btn" onclick="toggleDetails('productsDetails', this)">View More</button>
+                <div class="card-details" id="productsDetails">
+                    <p>Contact dermatitis is caused by things your skin touches, such as: Chemicals, cosmetics, soaps, detergents, and poison ivy, oak, or sumac.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products Section -->
+    <section id="products" class="recommended-products">
+        <h2>Recommended for You</h2>
+        <div class="recommended-product-list">
+            <!-- Product 1 -->
+            <div class="recommended-product-card">
+                <img src="{{ url_for('static', filename='images/mask.jpg') }}" alt="Product 1">
+                <h3>Mamaearth Ubtan Face Mask</h3>
+                <p class="short-description">Indulge in the age-old tradition of Ubtan and let it rejuvenate your face for a fresh, bright, flawless look.</p>
+                <button class="view-more-btn" onclick="toggleViewMore('product1Details')">View More</button>
+                <div class="full-description" id="product1Details">
+                    <p>The goodness of Ubtan comprises Turmeric and Saffron – two ingredients that are revered for offering a natural glow and removing suntan. Mamaearth Ubtan Face Mask features Saffron that clears spots and helps in tan removal, and turmeric’s antioxidant properties in this De Tan Face Pack protect the skin cells from the damage caused by free radicals.
+
+                        The presence of Apricot Oil and Cucumber in the Ubtan Face Mask help exfoliate, soothe and reduce tan for a glowing look. It is suitable for all skin types and is free from harmful chemical</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="recommended-product-card">
+                <img src="{{ url_for('static', filename='images/tea.jpg') }}" alt="Product 2">
+                <h3>Mamaearth Tea Tree Face Wash</h3>
+                <p class="short-description">Mamaearth Tea Tree Face Wash for acne and pimples is a natural blend of neem and tea tree oil.</p>
+                <button class="view-more-btn" onclick="toggleViewMore('product2Details')">View More</button>
+                <div class="full-description" id="product2Details">
+                    <p>It helps prevent acne by deep cleaning impurities, fighting bacteria and controlling excess oil secretion. All this, without stripping the skin off its natural oils.
+
+                        Aloe Vera in the face wash helps reduce redness and inflammation. Dermatologically tested and pH balanced, it takes gentle care of your skin while making it look healthy and glowing. It is absolutely safe since it contains no harmful chemicals like SLES, Sulfates, Phthalates, and Artificial Fragrance</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="recommended-product-card">
+                <img src="{{ url_for('static', filename='images/serum.jpg') }}" alt="Product 3">
+                <h3>Vitamin C Serum</h3>
+                <p class="short-description">A daily dose of natural radiance - that’s Mamaearth 10% Vitamin C Essence Serum for you.</p>
+                <button class="view-more-btn" onclick="toggleViewMore('product3Details')">View More</button>
+                <div class="full-description" id="product3Details">
+                    <p>Vitamin C Serum Crafted with the natural goodness of Vitamin C and Gotu Kola, the potent Essence Serum is meant to give your skin a natural and long-lasting glow. With powerful skin illuminating properties thanks to Vitamin C and Niacinamide, the mamaearth vitamin c face serum reduces pigmentation and promotes even-toned skin. Gotu Kola meanwhile, provides intense skin moisturization, boosts collagen production, leaving the skin radiant and healthy. Perfect for daily use, 
+                        This vitamin c serum for face suits all skin types retains moisture and fights the damage caused by free radicals. And because of our ‘no toxins and no harmful chemicals’ philosophy, there are no silicones, parabens, mineral oil, and dyes in our 10% Vitamin C Essence Serum which makes it one of the best vitamin c face serum in India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+<section id="about" class="container">
+    <h2>About Us</h2>
+    <p>Skincare Doctor is an AI-powered platform that helps users analyze their skin conditions and provides personalized skincare recommendations. Our advanced technology assists in improving your skincare routine by identifying key areas of focus.</p>
+</section>
+
+<!-- Our Team Section -->
+<section id="team">
+    <h2>Our Team</h2>
+    <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/me.jpg') }}" alt="Team Member 1">
+            <h3>Sai Chechare</h3>
+            <p>UI/Ux and Frontend Developer</p>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/sameer.jpg') }}" alt="Team Member 2">
+            <h3>Sameer Pawar</h3>
+            <p>Backend Developer</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-details">
+                <h3>Our Location</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra, India (422305)</p>
+                <h3>Call Us</h3>
+                <p><i class="fas fa-phone-alt"></i>8530957253</p>
+                <h3>Email Us</h3>
+                <p><i class="fas fa-envelope"></i> skincaredoctor108@gmail.com</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="/getdata" method="POST">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Skincare Doctor. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle card details visibility
+        function toggleDetails(id, button) {
+            var details = document.getElementById(id);
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                button.textContent = "Read More";  // Reset button text
+            } else {
+                details.style.display = "block";
+                button.textContent = "Read Less";  // Change button text
+            }
+        }
+
+        // Toggle product "View More" visibility
+        function toggleViewMore(id) {
+            var details = document.getElementById(id);
+            var button = event.target;
+
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                button.textContent = "View More";  // Reset button text
+            } else {
+                details.style.display = "block";
+                button.textContent = "View Less";  // Change button text
+            }
+        }
+    </script>
+</body>
+</html>
+
