@@ -49,7 +49,7 @@ def getdata():
 def data_insertion_Db():
     full_name = request.form.get('name')
     gender = request.form.get('gender')
-    region = request.form.get('region')
+    region = request.form.get('option')
     Email = request.form.get('email')
     phone = request.form.get('phone')
     Doctor_name = request.form.get('options')
@@ -71,10 +71,33 @@ def data_insertion_Db():
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.starttls()
     server.login('skincaredoctor108@gmail.com','ynas zcoz khtc apay')
-    server.sendmail('skincaredoctor108@gmail.com','{}'.format(Email),' {} Thank You!... \n You will get you appointment details with {} as soon as possible \n For Your Problem :-{}'.format(full_name,Doctor_name,problem))
+    server.sendmail('skincaredoctor108@gmail.com','{}'.format(Email),'Thank You!! \n Mr/Ms. {} You will get your appointment details with {} as soon as possible \n For Your Problem :-{}'.format(full_name,Doctor_name,problem))
    
     
     return "submitted"
+
+
+# search bar edition
+@app.route('/search',methods=['POST'])
+def search():
+    search_data = request.form.get('search')
+    if "pimple" in search_data:
+        return render_template('pimple.html')
+    elif "tanning" in search_data:
+        return render_template('tanning.html')
+    elif "rashes" in search_data:
+        return render_template('rashes.html')
+    elif "hair fall" in search_data:
+        return render_template('hairfall.html')
+    elif "acne" in search_data:
+        return render_template('acne.html')
+    elif "fine lines" in search_data:
+        return render_template('finelines.html')
+    else:
+        return "page not found"
+
+    
+    
     
 
 
