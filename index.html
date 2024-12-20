@@ -6,6 +6,16 @@
 <title>Skincare Landing Page</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+
+<script>
+    // JavaScript code to display an alert message when the website loads
+    window.onload = function () {
+        alert("Welcome to Skincare Doctor! Please note that your information will be stored for security and communication purposes.");
+    };
+</script>
+
+
 </head>
 <body>
 
@@ -17,17 +27,25 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#products">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#experts">Experts</a></li>
                 <li><a href="/appointment">Appointment</a></li>
+                
             </ul>
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="login-button">Login</button>
+            </div>
+        
         </nav>
+
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search Products...">
+            <form action='/search' method="POST">
+            <input type="text" name="search" class="search-input" placeholder="Search Products...">
             <button class="microphone-btn">
                 <i class="fas fa-microphone"></i>
             </button>
+            </form>
         </div>
     </header>
     
@@ -138,7 +156,7 @@
         <div class="card-container">
             <!-- Card 1 -->
             <div class="info-card">
-                <img src="{{ url_for('static', filename='images/pimples.jpg') }}" alt="Mission" class="card-image">
+                <img src="{{ url_for('static', filename='images/pimples.jpg') }}" alt="pimple" class="card-image">
                 <h3>Pimples</h3>
                 <p>Pimples are a common skin condition caused by clogged or inflamed oil glands or an increased presence of pimple-causing bacteria on your skin.</p>
                 <button class="details-btn" onclick="toggleDetails('missionDetails', this)">View More</button>
@@ -149,7 +167,7 @@
 
             <!-- Card 2 -->
             <div class="info-card">
-                <img src="{{ url_for('static', filename='images/Tanning.jpg') }}" alt="Our Team" class="card-image">
+                <img src="{{ url_for('static', filename='images/Tanning.jpg') }}" alt="Tanning" class="card-image">
                 <h3>Tanning</h3>
                 <p>You get tan when your skin comes into contact with ultraviolet rays of light (UV rays). The two types of UV rays are UVA and UVB.</p>
                 <button class="details-btn" onclick="toggleDetails('teamDetails', this)">View More</button>
@@ -160,7 +178,7 @@
 
             <!-- Card 3 -->
             <div class="info-card">
-                <img src="{{ url_for('static', filename='images/Rashes.jpg') }}" alt="Products" class="card-image">
+                <img src="{{ url_for('static', filename='images/Rashes.jpg') }}" alt="rashes" class="card-image">
                 <h3>Rashes</h3>
                 <p>A simple rash is called dermatitis, meaning inflammation of the skin.</p>
                 <button class="details-btn" onclick="toggleDetails('productsDetails', this)">View More</button>
@@ -168,6 +186,66 @@
                     <p>Contact dermatitis is caused by things your skin touches, such as: Chemicals, cosmetics, soaps, detergents, and poison ivy, oak, or sumac.</p>
                 </div>
             </div>
+
+            <!-- Card 4 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/pores.jpg') }}" alt="pores" class="card-image">
+                <h3>Pores</h3>
+                <p>Pores are tiny openings in the skin that release sweat and oil from glands, and are essential for healthy skin.</p>
+                <button class="details-btn" onclick="toggleDetails('poresDetails', this)">View More</button>
+                <div class="card-details" id="poresDetails">
+                    <p>Clogged pores are a common skin concern that may lead to acne. A buildup of dirt, oil or dead skin cells can cause clogged pores. The condition is most common in people with very oily skin. A gentle skin care routine can help resolve clogged pores.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/hairloss.jpg') }}" alt="hair fall" class="card-image">
+                <h3>Hair Fall</h3>
+                <p>Hereditary hair loss (androgenic alopecia) is a common cause in both men and women.</p>
+                <button class="details-btn" onclick="toggleDetails('hairlossDetails', this)">View More</button>
+                <div class="card-details" id="hairlossDetails">
+                    <p>Hair fall can occur due to a variety of reasons, including genetic factors, hormonal changes, medical conditions, nutritional deficiencies, stress, and aging. Hereditary hair loss (androgenic alopecia) is a common cause that follows a predictable pattern, while hormonal shifts during pregnancy, menopause, or due to conditions like PCOS can also contribute.</p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/acne.jpg') }}" alt="acne" class="card-image">
+                <h3>Acne</h3>
+                <p>Acne is a common skin condition that happens when hair follicles under the skin become clogged.</p>
+                <button class="details-btn" onclick="toggleDetails('acneDetails', this)">View More</button>
+                <div class="card-details" id="acneDetails">
+                    <p>Acne is an inflammatory disorder of the skin, which has sebaceous (oil) glands that connects to the hair follicle, which contains a fine hair. In healthy skin, the sebaceous glands make sebum that empties onto the skin surface through the pore, which is an opening in the follicle. Keratinocytes, a type of skin cell, line the follicle.  Normally as the body sheds skin cells, the keratinocytes rise to the surface of the skin.</p>
+                </div>
+            </div>
+
+             <!-- Card 7 -->
+             <div class="info-card">
+                <img src="{{ url_for('static', filename='images/finelines.jpg') }}" alt="fine line" class="card-image">
+                <h3>Fine Lines and Wrinkles</h3>
+                <p>Fine lines are the first sign of wrinkles and are small creases that appear on the skin. </p>
+                <button class="details-btn" onclick="toggleDetails('finelinesDetails', this)">View More</button>
+                <div class="card-details" id="finelinesDetails">
+                    <p>Wrinkles are lines or creases on your skin. It’s a normal part of aging. Wrinkles that occur early in life could be the result of smoking or sun damage. You don’t need to treat wrinkles unless you want to change how they appear on your skin by using over-the-counter products, outpatient procedures or surgery to remove layers of your skin.</p>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="info-card">
+                <img src="{{ url_for('static', filename='images/heads.jpg') }}" alt="black and white heads" class="card-image">
+                <h3>Blackheads and Whiteheads</h3>
+                <p>Blackheads and whiteheads are black bumps or white bumps, but they have similar causes. You can treat both with similar options. </p>
+                <button class="details-btn" onclick="toggleDetails('blackDetails', this)">View More</button>
+                <div class="card-details" id="blackDetails">
+                    <p>Blackheads and whiteheads are two common types of acne.
+
+                        As the names suggest, blackheads look like black dots on your skin and whiteheads look like white spots. While blackheads and whiteheads form differently, both respond to similar treatment approaches.</p>
+                </div>
+            </div>
+
+            
+
         </div>
     </section>
 
@@ -212,8 +290,65 @@
                         This vitamin c serum for face suits all skin types retains moisture and fights the damage caused by free radicals. And because of our ‘no toxins and no harmful chemicals’ philosophy, there are no silicones, parabens, mineral oil, and dyes in our 10% Vitamin C Essence Serum which makes it one of the best vitamin c face serum in India.</p>
                 </div>
             </div>
+
+            <!-- Product 4 -->
+            <div class="recommended-product-card">
+                <img src="{{ url_for('static', filename='images/rashes4.jpg') }}" alt="Product 4">
+                <h3>Himalaya Anti-rash Cream</h3>
+                <p class="short-description">Get relief from pregnancy skin rashes with Himalaya FOR MOMS Anti-Rash Cream</p>
+                <button class="view-more-btn" onclick="toggleViewMore('product4Details')">View More</button>
+                <div class="full-description" id="product4Details">
+                    <p>Get relief from pregnancy skin rashes with Himalaya FOR MOMS Anti-Rash Cream, a formulation with the goodness of herbs that effectively reduces itching and rashes, and gently soothes the skin</p>
+                </div>
+            </div>
         </div>
     </section>
+
+
+
+    <!-- Skincare Experts Section -->
+<section id="experts" class="experts-section">
+    <h2>Meet Our Skincare Experts</h2>
+    <div class="expert-cards-container">
+        <!-- Expert 1 -->
+        <div class="expert-card">
+            <img src="{{ url_for('static', filename='images/snenal.jpg') }}" alt="Expert 1" class="expert-image">
+            <h3>Dr. Snenal Kalantri</h3>
+            <p><strong>Address:</strong> G 1, Suyojit modern point, Sharanpur Rd, opp. police petrol pump, Old Pandit Colony, Police Staff Colony, Nashik, Maharashtra 422002</p>
+            <p><strong>Experience:</strong> 10+ Years</p>
+            <p><strong>Services:</strong> Skin Care Clinic, Dermatologic Surgery, Laser Skin Therapy</p>
+        </div>
+
+        <!-- Expert 2 -->
+        <div class="expert-card">
+            <img src="{{ url_for('static', filename='images/shreeya.jpg') }}" alt="Expert 2" class="expert-image">
+            <h3>Dr. Shreeya</h3>
+            <p><strong>Address:</strong> 206, Sai Square, Mumbai Naka, Matoshree Nagar, Nashik, Maharashtra 422002</p>
+            <p><strong>Experience:</strong> 8+ Years</p>
+            <p><strong>Services:</strong> Skincare Clinic, Permanent make-up clinic, Dermatologist, Hair Transplantation, Cosmetic Surgery</p>
+        </div>
+
+        <!-- Expert 3 -->
+        <div class="expert-card">
+            <img src="{{ url_for('static', filename='images/aditi.jpg') }}" alt="Expert 3" class="expert-image">
+            <h3>Dr. Aaditi Survase</h3>
+            <p><strong>Address:</strong> 104, oppo IDBI Bank, Navrang Complex, Pune Rd, near Dwarka Circle, Near Dwarka Bus Stop, Dwarka, Nashik, Maharashtra 422011</p>
+            <p><strong>Experience:</strong> 12+ Years</p>
+            <p><strong>Services:</strong> Skincare Clinic</p>
+        </div>
+
+        <!-- Expert 4 -->
+        <div class="expert-card">
+            <img src="{{ url_for('static', filename='images/teja.jpg') }}" alt="Expert 3" class="expert-image">
+            <h3>Dr. Teja Kulkarni</h3>
+            <p><strong>Address:</strong> Plot No 4, Infront of Aaware Hospital, B/H shreejay Apartment, Mayureshwar Niwas, Arpita skin care and Cosmetology clinic, Govind Nagar, Nashik, Maharashtra 422009</p>
+            <p><strong>Experience:</strong> 12+ Years</p>
+            <p><strong>Services:</strong> Skincare Clinic</p>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- About Section -->
 <section id="about" class="container">
@@ -260,7 +395,7 @@
                 <form action="/getdata" method="POST">
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Problem" required></textarea>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -279,10 +414,10 @@
             var details = document.getElementById(id);
             if (details.style.display === "block") {
                 details.style.display = "none";
-                button.textContent = "Read More";  // Reset button text
+                button.textContent = "View More";  // Reset button text
             } else {
                 details.style.display = "block";
-                button.textContent = "Read Less";  // Change button text
+                button.textContent = "View More";  // Change button text
             }
         }
 
